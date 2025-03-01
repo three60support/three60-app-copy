@@ -1,0 +1,51 @@
+<h2 align='center'> Homework </h2>
+<form class='card p-1 bg-light'>
+	<div class='form-row'>
+		<div class='form-group col-6'>
+			<label class='control-label small compact' for='homework_as_on'> Homework As On </label>
+			<input type='text' id='homework_as_on' class='form-control' size=13 readonly/>
+		</div>
+		<div class='form-group col-6' align='center'>
+			<br class='compact_label_height'/>
+			<button id='get_homework_button' class='btn btn-warning'> Submit </button>
+		</div>
+	</div>
+</form>
+<br>
+<table id='homework_table' width='97%'>
+	<thead>
+	</thead>
+	<tbody id='homework_tbody'> </tbody>
+</table>
+<div id='homework_modal' class='modal fade' role='dialog'>
+	<div class='modal-dialog'>
+		<div class='modal-content'>
+			<div class='modal-header'>
+				<h4 class='modal-title'> View Homework										</h4>
+				<button type='button' class='close' data-dismiss='modal'> &times;			</button>
+			</div>
+			<div class='modal-body'>
+				<div class='row'>
+					<div class='col-4 font-weight-bold'> Subject							</div>
+					<div class='col-8' id='homework_subject_div'>							</div>
+				</div>
+				<div class='row'>
+					<div class='col-4 font-weight-bold'> Given On							</div>
+					<div class='col-8' id='given_on_div'>									</div>
+				</div>
+				<div class='row'>
+					<div class='col-4 font-weight-bold'> Due Date							</div>
+					<div class='col-8' id='due_date_div'>									</div>
+				</div>
+				<hr>
+				<div class='row'>
+					<div class='col-12' id='homework_div'>									</div>
+				</div>
+			</div>
+			<div class='modal-footer'>
+				<button type='button' class='btn btn-warning' data-dismiss='modal'> Close	</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src='/academic/js/student_homework_app.js'> </script>

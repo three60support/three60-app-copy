@@ -1,0 +1,58 @@
+<h3 align='center'> Messages </h3>
+<form id='get_email_form' class='card p-1 bg-light'>
+	<div class='form-row'>
+		<div class='form-group col-6'>
+			<label for='from_date' class='control-label small compact'> From Date </label>
+			<input type='text' id='from_date' name='from_date' class='form-control datepicker' size=13 readonly/>
+		</div>
+		<div class='form-group col-6'>
+			<label for='to_date' class='control-label small compact'> To Date </label>
+			<input type='text' id='to_date' name='to_date' class='form-control datepicker' size=13 readonly/>
+		</div>
+	</div>
+	<div class='form-row'>
+		<div class='form-group col-6'>
+			<label for='read_status' class='control-label small compact'> Status </label>
+			<select id='read_status' name='read_status' class='form-control'>
+				<option value='U' selected> Unread	</option>
+				<option value='R'> Read				</option>
+				<option value='A'> All				</option>
+			</select>
+		</div>
+		<div class='form-group col-6' align='center'>
+			<br class='compact_label_height'/>
+			<button id='get_email_button' class='btn btn-warning'> Submit </button>
+		</div>
+	</div>
+</form>
+<table id='email_table' width='97%'>
+	<tbody id='email_tbody'> </tbody>
+</table>
+<div id='email_modal' class='modal fade' role='dialog'>
+	<div class='modal-dialog'>
+		<div class='modal-content'>
+			<div class='modal-header'>
+				<h4 class='modal-title'> View Message										</h4>
+				<button type='button' class='close' data-dismiss='modal'> &times;			</button>
+			</div>
+			<div class='modal-body'>
+				<div class='row'>
+					<div class='col-4 font-weight-bold'> Subject							</div>
+					<div class='col-8' id='email_subject_div'>								</div>
+				</div>
+				<div class='row'>
+					<div class='col-4 font-weight-bold'> Sent On							</div>
+					<div class='col-8' id='creation_time_div'>								</div>
+				</div>
+				<hr>
+				<div class='row'>
+					<div class='col-12' id='body_div'>										</div>
+				</div>
+			</div>
+			<div class='modal-footer'>
+				<button type='button' class='btn btn-warning' data-dismiss='modal'> Close	</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src='/communication/js/email_app.js'> </script>

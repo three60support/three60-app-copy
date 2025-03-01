@@ -1,0 +1,22 @@
+table.three60												{
+	margin													:  auto;
+}
+table.three60, table.three60 th, table.three60 td			{
+	border													:  1px solid black;
+	border-collapse											:  collapse;
+}
+table.three60 td											{
+	text-align												:  center;
+	padding													:  3px;
+}
+table.border_less, table.border_less td						{
+	border													:  none;
+}
+
+label.compact												{
+	margin-bottom											:  0px;
+}
+
+br.compact_label_height										{
+	line-height												:  14px;
+}

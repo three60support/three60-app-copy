@@ -1,0 +1,93 @@
+<html>
+<head>
+	<meta http-equiv='Content-Security-Policy' content="script-src 'unsafe-inline' 'self' https://code.jquery.com https://cdn.jsdelivr.net https://cdn.datatables.net;
+		style-src 'unsafe-inline' 'self' https://code.jquery.com https://cdn.jsdelivr.net https://cdn.datatables.net https://cdnjs.cloudflare.com;"/>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<script src='https://code.jquery.com/jquery-3.7.0.min.js' integrity='sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=' crossorigin='anonymous'> </script>
+	<link rel='stylesheet' href='https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css'/>
+	<script src='https://code.jquery.com/ui/1.13.2/jquery-ui.min.js' integrity='sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=' crossorigin='anonymous'> </script>
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm'
+		crossorigin='anonymous'/>
+	<script src='https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q'
+		crossorigin='anonymous'> </script>
+	<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl'
+		crossorigin='anonymous'> </script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css"
+		integrity="sha256-bZRrQVK1rYvxccX8WACyWguD6Ba0h4h/Qs6vmJP2Pws=" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/js/bootstrap-datepicker.min.js" integrity="sha256-iZp9dyOMJKPFdn1UMra9ZMhPZAlSGZUzdhqqEgijE+Q="
+		crossorigin="anonymous"></script>				<!-- to be included after jquery-ui -->
+	<script src='https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js'> </script>
+	<link rel='stylesheet' href='https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css'/>
+	<script src='https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js'> </script>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' crossorigin='anonymous' referrerpolicy='no-referrer'
+		integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=='/>
+	<link rel='stylesheet' href='/infrastructure/css/gentelella.min.css'/>
+	<link rel='stylesheet' href='/infrastructure/css/three60.css'/>
+	<script src='/infrastructure/js/utility_api.js'>	</script>
+	<script src='js/student_homepage_app.js'>			</script>
+	<style>
+		img.logo											{
+			height											:  40px;
+		}
+	</style>
+</head>
+<body class='nav-md'>
+	<div class='body container'>
+		<div class='main_container'>
+			<div class='col-md-3 left_col'>
+				<div class='left_col scroll-view'>
+					<div class='clearfix'> </div>
+					<div class='profile clearfix'>
+						<div class='profile_pic'>
+							<img class='img-circle profile_img student_photo'>
+						</div>
+						<div class='profile_info'>
+							<span>Welcome,</span>
+							<h2 class='student_name'> </h2>
+						</div>
+					</div>
+					<br>
+					<div id='sidebar-menu' class='main_menu_side hidden-print main_menu'>
+						<div class='menu_section'>
+							<ul id='main_menu_ul' class='nav side-menu'>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='top_nav'>
+				<div class='nav_menu'>
+					<div class='nav toggle'>
+						<a id='menu_toggle'>
+							<i class='fa fa-bars'></i>
+						</a>
+					</div>
+					<nav class='nav navbar-nav'>
+						<ul class='navbar-right'>
+							<li class='nav-item' style='float:left'>
+								<img src='/infrastructure/img/three60_logo.png' class='logo'>
+							</li>
+							<li class='nav-item dropdown open'>
+								<a href='#' id='navbarDropdown' class='user-profile dropdown-toggle' aria-haspopup='true' data-toggle='dropdown' aria-expanded='false'>
+									<img class='student_photo'>
+								</a>
+								<div class='dropdown-menu dropdown-usermenu pull-right' aria-labelledby='navbarDropdown'>
+									<a href='#' id='logout_a' class='dropdown-item'>
+										<i class='fa fa-sign-out fa-pull-right'></i> Log Out
+									</a>
+									<!--<a href='#' id='change_password' class='dropdown-item'>
+										<i class='fa fa-key fa-pull-right'></i> Change Password
+									</a>-->
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div id='main_frame' class='right_col' role='main'>
+			</div>
+		</div>
+	</div>
+</body>
+	<script src='/infrastructure/js/gentelella.min.js'> </script>
+</html>
