@@ -24,14 +24,12 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
   
-      - name: Import Android keystore and Google services JSON
+      - name: Import Android keystore
         env:
           KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-          GOOGLE_SERVICES_JSON_BASE64: ${{ secrets.ANDROID_GOOGLE_SERVICES_JSON_BASE64 }}
         run: |
-          # import keystore and google services json from secrets
+          # import keystore 
           echo -n "$KEYSTORE_BASE64" | base64 --decode > android.keystore
-          echo -n "$GOOGLE_SERVICES_JSON_BASE64" | base64 --decode > android-google-services.json
 
       - name: Install Cordova
         run: npm install -g cordova
@@ -42,41 +40,8 @@ jobs:
       - name: Add cordova-plugin-androidx-adapter
         run: cordova plugin add cordova-plugin-androidx-adapter@1.1.3
 
-      - name: Add custom cordova-plugin-inappbrowser-download
-        run: cordova plugin add ./cordova-plugin-inappbrowser-download
-
-      - name: Add cordova-plugin-device
-        run: cordova plugin add cordova-plugin-device@2.1.0
-
-      - name: Add cordova-plugin-push
-        env:
-          GOOGLE_SERVICES_JSON_BASE64: ${{ secrets.ANDROID_GOOGLE_SERVICES_JSON_BASE64 }}
-        if: env.GOOGLE_SERVICES_JSON_BASE64 != ''
-        run: cordova plugin add @havesource/cordova-plugin-push@dev
-
-      - name: Add cordova-plugin-splashscreen
-        run: cordova plugin add cordova-plugin-splashscreen@6.0.1
-
-      - name: Add cordova-plugin-media-capture
-        run: cordova plugin add cordova-plugin-media-capture@4.0.0
-
-      - name: Add cordova-plugin-dialogs
-        run: cordova plugin add cordova-plugin-dialogs@2.0.2
-
-      - name: Add cordova-plugin-vibration
-        run: cordova plugin add cordova-plugin-vibration@3.1.1
-
-      - name: Add cordova-plugin-geolocation
-        run: cordova plugin add cordova-plugin-geolocation@4.1.0
-
-      - name: Add cordova-plugin-fingerprint-aio
-        run: cordova plugin add cordova-plugin-fingerprint-aio@5.0.1
-
-      - name: Add cordova-plugin-camera
-        run: cordova plugin add cordova-plugin-camera@6.0.0
-
-      - name: Add cordova-plugin-android-permissions
-        run: cordova plugin add cordova-plugin-android-permissions@1.1.5
+      - name: Add cordova-plugin-inappbrowser
+        run: cordova plugin add cordova-plugin-inappbrowser
 
       - name: Build Android release APK
         run: cordova build android --release -- --keystore=android.keystore --storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} --password=${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --packageType=apk
